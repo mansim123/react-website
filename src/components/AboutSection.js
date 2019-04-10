@@ -13,7 +13,7 @@ class About extends React.Component {
 						<h2>working with all the latest technlogies</h2>
 					</header>
 					<div className="col_1">
-						<img src={profilePicture}/>
+						<img alt="profilePicture" src={profilePicture}/>
 					</div>
 					<div className="col_2">
 						<h3>Manuel Yemoh</h3>

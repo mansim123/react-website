@@ -3,6 +3,7 @@ import '../css/App.css';
 import IntroDiv from './IntroSection';
 import AboutDiv from './AboutSection';
 import ServiceDiv from './ServicesSection';
+import SkillsDiv from './SkillsSection';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
 	      <IntroDiv></IntroDiv>
 	      <AboutDiv></AboutDiv>
 	      <ServiceDiv></ServiceDiv>
+	      <SkillsDiv></SkillsDiv>
 	    </div>
     )
   }
