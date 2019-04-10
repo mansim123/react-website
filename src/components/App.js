@@ -4,8 +4,15 @@ import IntroDiv from './IntroSection';
 import AboutDiv from './AboutSection';
 import ServiceDiv from './ServicesSection';
 import SkillsDiv from './SkillsSection';
+import ContactDiv from './ContactSection';
 
 class App extends Component {
+
+	componentDidMount() {
+	    	
+	}
+
+
   render() {
     return (
 	    <div>
@@ -13,6 +20,7 @@ class App extends Component {
 	      <AboutDiv></AboutDiv>
 	      <ServiceDiv></ServiceDiv>
 	      <SkillsDiv></SkillsDiv>
+	      <ContactDiv></ContactDiv>
 	    </div>
     )
   }

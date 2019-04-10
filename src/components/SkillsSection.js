@@ -7,7 +7,7 @@ class Skills extends React.Component {
 
 	render(){
 
-		const skillComponents = SkillsData.map(skill => <SkillsPop key={skill.id} title={skill.title} percent={skill.percent} />)
+		const skillComponents = SkillsData.map(skill => <SkillsPop key={skill.id} title={skill.title} percent={skill.percent} colorOne={skill.colorOne} colorTwo={skill.colorTwo}/>)
 
 		return (
 			<div className="skillsBackground">

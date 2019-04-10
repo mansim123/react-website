@@ -2,11 +2,12 @@ import React from 'react'
 import '../css/Intro.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons'
+import {TweenMax} from "gsap/TweenMax";
 // import axios from 'axios';
 
 class IntroSection extends React.Component {
 
-	handleScroll = () => console.log("hit");
+	handleScroll = () => window.scroll({top: 760, left: 0, behavior: 'smooth'});
 
 	render(){
 

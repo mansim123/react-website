@@ -1,0 +1,38 @@
+.contactBackground {
+	background-image:url('../img/contactBg.jpg');
+    width:100%;
+    height: 758px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.contactSection {
+	font-family: 'Sanchez', sans-serif;
+    padding: 50px 0;
+    text-align: center;
+    width: 1170px;
+    color:#000000;
+    margin: 0 auto;
+}
+
+.contactSection h1 {
+    color: #333;
+    font-size: 40px;
+    font-family: "Sanchez",sans-serif;
+    font-weight: bold;
+    word-break: keep-all;
+    margin-bottom:10px;
+    
+}
+
+.contactSection h2 {
+    color: #9F8E8E;
+    opacity:0.75;
+    font-size: 15px;
+    margin-top: 0;
+}
+
+.contactSection header{
+    padding-bottom: 50px;
+    text-align: center;
+}
