@@ -22,15 +22,10 @@ class App extends Component {
 	      <ServiceDiv></ServiceDiv>
 	      <SkillsDiv></SkillsDiv>
 	      <ContactDiv></ContactDiv>
+	      <FooterDiv></FooterDiv>
 	    </div>
     )
   }
 }
 
 export default App;
-
-/*
-
-
-<FooterDiv></FooterDiv>
-*/

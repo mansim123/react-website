@@ -94,12 +94,12 @@
 @media only screen and (max-width: 1170px) {
 
     .aboutSection {
-        width: 970px;
+        width: 950px;
     }
 
 }
 
-@media only screen and (max-width: 970px) {
+@media only screen and (max-width: 950px) {
 
     .aboutSection {
         width: 500px

@@ -95,6 +95,7 @@
         margin: 0 auto;
         width: 800px;
         display: inline-block;
+        padding-bottom: 50px;
     }
     .serviceBox {
         width: 30%;
