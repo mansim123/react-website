@@ -62,13 +62,6 @@ const skillsData = [
         colorOne:'#390dc7',
         colorTwo: '#3e0ed8'
     },
-    {
-        id: 10,
-        title: "NPM",
-        percent: "70",
-        colorOne:'#b60cc5',
-        colorTwo: '#c50dd6'
-    },
 
 ]
 

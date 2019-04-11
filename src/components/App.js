@@ -5,6 +5,7 @@ import AboutDiv from './AboutSection';
 import ServiceDiv from './ServicesSection';
 import SkillsDiv from './SkillsSection';
 import ContactDiv from './ContactSection';
+import FooterDiv from './FooterSection';
 
 class App extends Component {
 
@@ -27,3 +28,9 @@ class App extends Component {
 }
 
 export default App;
+
+/*
+
+
+<FooterDiv></FooterDiv>
+*/

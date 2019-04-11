@@ -8,32 +8,32 @@ const serviceData = [
     {
         id: 2,
         icon: "",
-        title: "Designs",
-        text: "Creating Master banner designs and re-purposing designs for multiple ad sizes."
+        title: "HTML5 Banners",
+        text: "Hand coded HTML5 banners as well as banners developed in tools such as GWD and Animate CC"
     },
     {
         id: 3,
         icon: "",
-        title: "Games",
-        text: "Creation of games for landing pages, institute banners and mobile apps using phaser.io"
+        title: "HTML5 Banners",
+        text: "Hand coded HTML5 banners as well as banners developed in tools such as GWD and Animate CC"
     },
     {
         id: 4,
         icon: "",
-        title: "Project manager",
-        text: "Managing large teams to ensure budgets, quality and timings are all met and exceeded"
+        title: "HTML5 Banners",
+        text: "Hand coded HTML5 banners as well as banners developed in tools such as GWD and Animate CC"
     },
     {
         id: 5,
         icon: "",
-        title: "Quality control",
-        text: "Checking pieces of work created internally before it's sent to the client externally."
+        title: "HTML5 Banners",
+        text: "Hand coded HTML5 banners as well as banners developed in tools such as GWD and Animate CC"
     },
     {
         id: 6,
         icon: "",
-        title: "Client facing",
-        text: "Happy to deal directly with clients or with account managers internally or externally"
+        title: "HTML5 Banners",
+        text: "Hand coded HTML5 banners as well as banners developed in tools such as GWD and Animate CC"
     },
 
 ]

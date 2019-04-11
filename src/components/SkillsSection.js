@@ -18,7 +18,9 @@ class Skills extends React.Component {
 					</header>
 				</div>
 				<div className="skillsBoxesSection">
-					{skillComponents}
+						<div className="skillsBoxesContainer">
+							{skillComponents}
+						</div>
 				</div>
 			</div>
 		)

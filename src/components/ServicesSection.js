@@ -20,7 +20,9 @@ class Services extends React.Component {
 					</header>
 				</div>
 				<div className="ServicesBoxesSection">
-					{serviceComponents}
+					<div className="ServicesBoxesContainer">
+						{serviceComponents}
+					</div>
 				</div>
 			</div>
 		)

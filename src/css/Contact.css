@@ -1,32 +1,43 @@
 .contactBackground {
 	background-image:url('../img/contactBg.jpg');
     width:100%;
-    height: 758px;
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
 .contactSection {
 	font-family: 'Sanchez', sans-serif;
-    padding: 50px 0;
+    padding-top: 40px;
     text-align: center;
-    width: 1170px;
+    width: 770px;
     color:#000000;
+    margin: 0 auto;
+
+}
+
+.contactSectionContainer {
+    text-align: center;
+    width: 770px;
+    color: #000000;
     margin: 0 auto;
 }
 
+.contactSectionContainer form {
+    display: inline-block;
+    padding-bottom:50px;
+}
+
 .contactSection h1 {
-    color: #333;
+    color: #fff;
     font-size: 40px;
     font-family: "Sanchez",sans-serif;
     font-weight: bold;
     word-break: keep-all;
     margin-bottom:10px;
-    
 }
 
 .contactSection h2 {
-    color: #9F8E8E;
+    color: #fff;
     opacity:0.75;
     font-size: 15px;
     margin-top: 0;
@@ -35,4 +46,124 @@
 .contactSection header{
     padding-bottom: 50px;
     text-align: center;
+}
+
+.contactInputs {
+    width: 33.3%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+}
+
+.contactInputs input{
+    height: 50px;
+    width: 90%;
+    display: block;
+    font-size: 14px;
+    padding: 0px 10px;
+    line-height: 1.42857;
+    color: #555;
+    background-color: #FFF;
+    background-image: none;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+
+.contactTextArea {
+    width: 100%;
+    margin: 0px 0;
+    position: relative;
+    float: left;
+    padding: 20px 0px 20px 0px;
+}
+
+.contactTextArea textarea {
+    display: block;
+    width: 96.7%;
+    height: auto;
+    padding: 6px 10px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.contactSubmit {
+    width:100%;
+    float:left;
+    position: relative;
+    min-height: 1px;
+}
+
+.contactSubmit button {
+    color: #FFF;
+    border: 2px solid #FFF;
+    background: transparent;
+    height: 40px;
+    width: 100px;
+    border-radius: 0;
+}
+
+@media only screen and (max-width: 850px) {
+
+    .contactSectionContainer {
+        text-align: center;
+        width: 500px;
+        margin:0 auto;
+    }
+
+    .contactInputs input{
+        width: 100%;
+        margin:0 auto;
+    }
+
+    .contactSection {
+        width: 100%;
+    }
+
+    .contactInputs{
+        width:100%;
+        padding-bottom: 20px;
+    }
+    .contactTextArea textarea {
+        display: block;
+        width: 100%;
+
+    }
+    .contactTextArea {
+            padding: 0px 0px 20px 0px;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+
+    .contactSectionContainer {
+        text-align: center;
+        width: 300px;
+        padding-left:20px;
+        margin:0 auto;
+    }
+    .contactInputs{
+        float:none;
+    }
+
+    .contactInputs input{
+        width:85%;
+        margin:0px;
+    }
+    .contactTextArea textarea {
+        width:85%;
+        margin:0px;
+    }
+    .contactSubmit {
+        width: 85%;
+
+    }
 }

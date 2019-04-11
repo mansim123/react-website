@@ -1,6 +1,4 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit } from '@fortawesome/free-solid-svg-icons'
 
 class ServicesPop extends React.Component {
 
@@ -18,7 +16,6 @@ class ServicesPop extends React.Component {
 			<div className="serviceBox">
 				<div className="servicesItem">
 					<div className="serviceIcon">
-						<FontAwesomeIcon className="fa" icon={faEdit} />
 						<h3>{this.state.title}</h3>
 					</div>
 				</div>
