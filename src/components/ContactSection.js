@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/Contact.css'
+import * as emailjs from 'emailjs-com';
 
 class Contact extends React.Component {
 
@@ -12,10 +13,11 @@ class Contact extends React.Component {
             value:""
         }
         this.handleChange = this.handleChange.bind(this)
-        this.handleSubmit = this.handleSubmit.bind(this)
+        //this.handleFormSubmit = this.handleFormSubmit.bind(this)
     }
 
     handleChange(event) {
+    	event.preventDefault();
         const {name, value, type, checked} = event.target
         type === "checkbox" ? 
             this.setState({
@@ -27,10 +29,31 @@ class Contact extends React.Component {
         }) 
     }
 
-    handleSubmit(event) {
-	   //alert('An essay was submitted: '+ this.state.firstName + this.state.email + this.state.subject + this.state.value);
-	   event.preventDefault();
-	}
+    handleFormSubmit (event) {
+      
+	  event.preventDefault();
+
+	  const service_id = "default_service";
+  	  const template_id = "gmail";
+  	  const user_id = "user_3i82VnlQSimK07gA3RFgh"
+
+  	  var templateParms = {
+  	  	firstName: this.state.firstName,
+	  	email: this.state.email,
+	  	subject: this.state.subject,
+	  	message: this.state.value
+  	  }
+
+  	  console.log(templateParms);
+
+	  emailjs.send(service_id,template_id,templateParms,user_id)
+	    .then((response) => {
+	       console.log('SUCCESS!', response.status, response.text);
+	    }, (err) => {
+	       console.log('FAILED...', err);
+	  });
+
+	};
 	
 	render () {
 
@@ -43,7 +66,7 @@ class Contact extends React.Component {
 						</header>
 				</div>
 				<div className="contactSectionContainer">
-						<form onSubmit={this.handleSubmit}>
+						<form>
 
 						<div className="contactInputs">
 							<input 
@@ -80,8 +103,15 @@ class Contact extends React.Component {
 			                />
 		                </div>
 		                <div className="contactSubmit">
-		                	<button>Submit</button>
+		                	<button 
+		                		onClick={this.handleFormSubmit.bind(this)}
+		                	></button>
 		                </div>
+		                <div>
+						  {this.state.mailSent &&
+						    <div>Thank you for contcting us.</div>
+						  }
+						</div>
 				       </form>
 		        </div>
 			</div>
