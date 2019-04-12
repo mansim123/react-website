@@ -1,39 +1,39 @@
 const serviceData = [
     {
         id: 1,
-        icon: "",
-        title: "HTML5 Banners",
-        text: "Hand coded HTML5 banners as well as banners developed in tools such as GWD and Animate CC"
+        icon: "code",
+        title: "Code Guru",
+        text: "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
     },
     {
         id: 2,
-        icon: "",
-        title: "HTML5 Banners",
-        text: "Hand coded HTML5 banners as well as banners developed in tools such as GWD and Animate CC"
+        icon: "eye",
+        title: "Eye for details",
+        text: "Creating pixel perfect templates from PSD/illustrator files, working close with designers."
     },
     {
         id: 3,
-        icon: "",
-        title: "HTML5 Banners",
-        text: "Hand coded HTML5 banners as well as banners developed in tools such as GWD and Animate CC"
+        icon: "users",
+        title: "Team player",
+        text: "Managing/working large teams to ensure budgets, quality and timings are all met and exceeded."
     },
     {
         id: 4,
-        icon: "",
-        title: "HTML5 Banners",
-        text: "Hand coded HTML5 banners as well as banners developed in tools such as GWD and Animate CC"
+        icon: "gamepad",
+        title: "Games dev",
+        text: "Creation of games for websites, landing pages and mobile apps using phaser.io"
     },
     {
         id: 5,
-        icon: "",
-        title: "HTML5 Banners",
-        text: "Hand coded HTML5 banners as well as banners developed in tools such as GWD and Animate CC"
+        icon: "mug-hot",
+        title: "Client facing",
+        text: "Happy to deal with clients or with account managers internally or externally"
     },
     {
         id: 6,
-        icon: "",
-        title: "HTML5 Banners",
-        text: "Hand coded HTML5 banners as well as banners developed in tools such as GWD and Animate CC"
+        icon: "graduation-cap",
+        title: "keen learner",
+        text: "Always researching the latest technologies to keep ahead of the market."
     },
 
 ]

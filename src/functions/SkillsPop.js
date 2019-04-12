@@ -1,6 +1,8 @@
 import React from 'react'
 import {TweenMax} from "gsap/TweenMax";
 
+
+
 class SkillsPop extends React.Component {
 
 	constructor (props){
@@ -17,10 +19,23 @@ class SkillsPop extends React.Component {
 	    // reference to the animation
 	    this.myTween = null;
 
+	    this.handleScroll = this.handleScroll.bind(this);
 	}
 
 	componentDidMount() {
-		this.myTween = TweenMax.to(this.percentBars, 2, {width:this.state.percent+'%',ease:"Sine.easeInOut"});
+		window.addEventListener('scroll', this.handleScroll);
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
+	}
+
+	handleScroll (event) {
+
+	     if(window.scrollY >= 1500){
+	     	this.myTween = TweenMax.to(this.percentBars, 2, {width:this.state.percent+'%',ease:"Sine.easeInOut"});
+	     	window.removeEventListener('scroll', this.handleScroll);
+	     }
 	}
 	
 	render(){
