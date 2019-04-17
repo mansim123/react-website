@@ -168,7 +168,7 @@ class Contact extends React.Component {
 				<div className="contactSection">
 						<header>
 							<h1>Contact</h1>
-							<h2>Drop me line to discuss projects</h2>
+							<h2>Contact me to discuss projects</h2>
 						</header>
 				</div>
 				<div className="contactSectionContainer">
