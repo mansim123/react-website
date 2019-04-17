@@ -68,7 +68,7 @@ class Contact extends React.Component {
     		errors.outlineName = normalBorder
     	}
 
-    	if(this.validateEmail(this.state.email) == false){
+    	if(this.validateEmail(this.state.email) === false){
     		errors.email = "* This is not a valid email"
     		errors.outlineEmail = redBorder
     		formIsValid = false
