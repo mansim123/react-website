@@ -135,7 +135,7 @@ class Contact extends React.Component {
 		       email: "",
 		       subject: "",
 		       message:"",
-	       	   emailSuccess:"The message was not sent, I will get back to you ASAP"
+	       	   emailSuccess:"The message was sent, I will get back to you ASAP"
 	       })
 	    }, (err) => {
 	       console.log('FAILED...', err);
