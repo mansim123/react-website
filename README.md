@@ -1,7 +1,7 @@
-# react-website
+# React-website
 This is my portfolio built in react
 
-# Skilled showcased
+## Skilled showcased
 
 - ReactJs
 - validation
@@ -11,11 +11,11 @@ This is my portfolio built in react
 - Props
 - Forms
 
-# Server used to host:
+## Server used to host:
 
 - Heroku - https://manuelreactportfolio.herokuapp.com/
 
-# Dependencies:
+## Dependencies:
 
 - Google fonts via web font loader
 - Fonts Awesome loader
