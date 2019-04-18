@@ -1,10 +1,10 @@
 # React-website
 This is my portfolio built in react
 
-## Skilled showcased
+## Skills showcased
 
 - ReactJs
-- validation
+- Validation
 - Styling
 - Animation
 - Data pulling and displaying
