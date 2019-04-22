@@ -22,18 +22,12 @@ body {
 .loadingimage {
 	background-image: url('../img/Preloader.gif');
     position: absolute;
-    top: 40%;
-    left: 45%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 100;
     width:128px;
     height:128px;
-}
-
-@media only screen and (max-width: 580px) {
-
-	.loadingimage {
-	    left: 35%;
-	}
-
-
 }
