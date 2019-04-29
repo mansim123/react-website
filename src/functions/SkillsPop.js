@@ -1,8 +1,6 @@
 import React from 'react'
 import {TweenMax} from "gsap/TweenMax";
 
-
-
 class SkillsPop extends React.Component {
 
 	constructor (props){

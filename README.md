@@ -13,7 +13,7 @@ This is my portfolio built in react
 
 ## Server used to host:
 
-- Heroku - https://manuelreactportfolio.herokuapp.com/
+- https://www.manuelyemoh.co.uk
 
 ## Dependencies:
 
