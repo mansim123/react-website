@@ -6,6 +6,7 @@ import ServiceDiv from './ServicesSection';
 import SkillsDiv from './SkillsSection';
 import ContactDiv from './ContactSection';
 import FooterDiv from './FooterSection';
+import ProjectDiv from './ProjectsSection'
 
 class App extends Component {
 
@@ -37,6 +38,7 @@ class App extends Component {
 	      <IntroDiv></IntroDiv>
 	      <AboutDiv></AboutDiv>
 	      <ServiceDiv></ServiceDiv>
+				<ProjectDiv></ProjectDiv>
 	      <SkillsDiv></SkillsDiv>
 	      <ContactDiv></ContactDiv>
 	      <FooterDiv></FooterDiv>
