@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../css/App.css';
+import '../css/App.scss';
 import IntroDiv from './IntroSection';
 import AboutDiv from './AboutSection';
 import ServiceDiv from './ServicesSection';

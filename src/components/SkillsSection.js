@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/Skills.css'
+import '../css/Skills.scss'
 import SkillsPop from '../functions/SkillsPop.js'
 import SkillsData from '../data/SkillsData.js'
 

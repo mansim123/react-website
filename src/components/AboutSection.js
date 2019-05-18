@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/About.css'
+import '../css/About.scss'
 import profilePicture from '../img/profilePic.jpg'
 
 class About extends React.Component {

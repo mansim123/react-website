@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/Contact.css'
+import '../css/Contact.scss'
 import * as emailjs from 'emailjs-com';
 
 const redBorder = {

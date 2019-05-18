@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/Services.css'
+import '../css/Services.scss'
 import ServicesPop from '../functions/ServicesPop.js'
 import ServiceData from '../data/ServiceData.js'
 //import my Json info

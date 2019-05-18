@@ -1,5 +1,5 @@
 import React from 'react'
-import '../css/Intro.css'
+import '../css/Intro.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowAltCircleDown } from '@fortawesome/free-solid-svg-icons'
 import {TweenMax} from "gsap/TweenMax";
