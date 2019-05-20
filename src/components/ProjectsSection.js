@@ -11,7 +11,7 @@ export class Projects extends Component {
       <ProjectPop
         key={project.id}
         image={project.image}
-        url={project.image}
+        url={project.url}
         title={project.title}
         text={project.text}
       />
