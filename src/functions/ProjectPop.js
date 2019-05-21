@@ -1,27 +1,29 @@
 import React from "react";
 import { stringify } from "querystring";
 
-
 class ProjectPop extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: true,
       image: props.image,
       url: props.url,
       title: props.title,
       text: props.text
     };
-    console.log(this.state);
+    //this.loadImage(this.state.image);
   }
 
   render() {
 
-    let imageRef = stringify(this.state.image);
-    
+
+    // if(this.state.loading) {
+    //   return null
+    // }
     return (
       <div className="projectBox">
         <div className="projectsItem">
-          <img src={imageRef} />
+          {/* <img src={} alt="product" /> */}
         </div>
         <div className="projectsDescription">
           <p>{this.state.text}</p>

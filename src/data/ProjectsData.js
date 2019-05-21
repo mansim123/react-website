@@ -1,7 +1,7 @@
 const projectData = [
   {
     id: 1,
-    image: "../img/loveMatch.jpg",
+    image: "../images/loveMatch.jpg",
     url: "https://www.lovematcher.co.uk",
     title: "Code Guru",
     text:
