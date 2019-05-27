@@ -12,7 +12,7 @@ class SkillsPop extends React.Component {
 			colorTwo:props.colorTwo
 		}
 
-		// reference to the DOM node
+			//reference to the DOM node
 	    this.percentBars = null;
 	    // reference to the animation
 	    this.myTween = null;

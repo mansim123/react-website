@@ -26,8 +26,16 @@ export class Projects extends Component {
               <h2>A Mix of my front end work</h2>
             </header>
           </div>
+
           <div className="projectsBoxesSection">
             <div className="projectsBoxesContainer">
+              <div className="projectsnav">
+                <a className="active" href="#">React</a>
+                <a href="#">HTML5 Banners</a>
+                <a href="#">Landing Pages</a>
+                <a href="#">Games</a>
+                <a href="#">All</a>
+              </div>
               {projectComponents}
             </div>
           </div>
