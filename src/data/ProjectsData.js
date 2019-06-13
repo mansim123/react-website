@@ -22,6 +22,30 @@ const projectData = [
     title: "Code Guru",
     text:
       "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
+  },
+  {
+    id: 4,
+    image: "nameOrigin.jpg",
+    url: "https://www.lovematcher.co.uk",
+    title: "Code Guru",
+    text:
+      "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
+  },
+  {
+    id: 5,
+    image: "autodesk.jpg",
+    url: "https://www.lovematcher.co.uk",
+    title: "Code Guru",
+    text:
+      "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
+  },
+  {
+    id: 6,
+    image: "trainline.jpg",
+    url: "https://www.lovematcher.co.uk",
+    title: "Code Guru",
+    text:
+      "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
   }
 ];
 
