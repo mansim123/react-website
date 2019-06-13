@@ -1,7 +1,7 @@
 const projectData = [
   {
     id: 1,
-    image: "../images/loveMatch.jpg",
+    image: "loveMatch.jpg",
     url: "https://www.lovematcher.co.uk",
     title: "Code Guru",
     text:
@@ -9,7 +9,7 @@ const projectData = [
   },
   {
     id: 2,
-    image: "../images/loveMatch.jpg",
+    image: "paperToss.jpg",
     url: "https://www.lovematcher.co.uk",
     title: "Code Guru",
     text:
@@ -17,7 +17,7 @@ const projectData = [
   },
   {
     id: 3,
-    image: "../images/loveMatch.jpg",
+    image: "joseDotd.jpg",
     url: "https://www.lovematcher.co.uk",
     title: "Code Guru",
     text:

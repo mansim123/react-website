@@ -36,10 +36,19 @@ class ProjectPop extends React.Component {
     });
   }
 
+  importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+}
+
   render() {
+
     const imgWidth = {
       width: "95%"
     };
+
+    const images = this.importAll(require.context('../img/thumb', false, /\.(png|jpe?g|svg)$/));
 
     // if(this.state.loading) {
     //   return null
@@ -54,7 +63,7 @@ class ProjectPop extends React.Component {
           <img
             ref={div => (this.productImage = div)}
             style={imgWidth}
-            src={require("../img/loveMatch.jpg")}
+            src={images[this.state.image]}
             alt="product"
           />
         </div>
