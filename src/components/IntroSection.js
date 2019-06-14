@@ -36,30 +36,37 @@ class IntroSection extends React.Component {
 		  overflow:'hidden'
 		};
 
-		return(
-			<div style={iStyle}>
-				<div className="introBackground">
-					<div className="introMainSection">
-						<div className="avatar"></div>
-						<h1>ReactJs front end developer</h1>
-						<a href="http://www.manuelyemoh.co.uk/ManuelYemohCV_2019_dev_.pdf" target="_blank">Download CV</a>
-						<p> 07525003188 / manuelyemoh@gmail.com</p>
-						<button href="#"  onClick={() => this.handleScroll()}>
-							<FontAwesomeIcon className="fa" icon={faArrowAltCircleDown} />
-						</button>
-					</div>
-				</div>
-				<div className="reactRibbon" ref={div => this.reactRibbon = div}>
-					<h2>
-						This website was built with React
-					</h2>
-					<a href="https://github.com/mansim123/react-website" target="_blank">
-						See Github Repo here
-					</a>
-				</div>
-			</div>
-			
-		)
+		return (
+      <div style={iStyle}>
+        <div className="introBackground">
+          <div className="introMainSection">
+            <div className="avatar" />
+            <h1>ReactJs front end developer</h1>
+            <a
+              rel="noopener noreferrer"
+              href="http://www.manuelyemoh.co.uk/ManuelYemohCV_2019_dev_.pdf"
+              target="_blank"
+            >
+              Download CV
+            </a>
+            <p> 07525003188 / manuelyemoh@gmail.com</p>
+            <button href="#" onClick={() => this.handleScroll()}>
+              <FontAwesomeIcon className="fa" icon={faArrowAltCircleDown} />
+            </button>
+          </div>
+        </div>
+        <div className="reactRibbon" ref={div => (this.reactRibbon = div)}>
+          <h2>This website was built with React</h2>
+          <a
+            rel="noopener noreferrer"
+            href="https://github.com/mansim123/react-website"
+            target="_blank"
+          >
+            See Github Repo here
+          </a>
+        </div>
+      </div>
+    );
 	}
 
 

@@ -60,12 +60,18 @@ class ProjectPop extends React.Component {
           onMouseEnter={() => this.animateScaleOver()}
           onMouseLeave={() => this.animateScaleOut()}
         >
-          <img
-            ref={div => (this.productImage = div)}
-            style={imgWidth}
-            src={images[this.state.image]}
-            alt="product"
-          />
+          <a
+            href={this.state.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              ref={div => (this.productImage = div)}
+              style={imgWidth}
+              src={images[this.state.image]}
+              alt="product"
+            />
+          </a>
         </div>
       </div>
     );

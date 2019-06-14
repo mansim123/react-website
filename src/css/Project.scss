@@ -121,6 +121,42 @@
   }
 }
 
+@media only screen and (max-width: 800px) {
+  .projectsBoxesContainer {
+    margin: 0 auto;
+    width: 600px;
+    display: inline-block;
+    padding-bottom: 50px;
+  }
+  .projectBox {
+    width: 47.5%;
+    display: block;
+    float: left;
+    padding: 5px;
+  }
+  .projectsSection {
+    width: 100%;
+  }
+  .projectsDescription {
+    padding: 20px 5px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .projectsBoxesContainer {
+    margin: 0 auto;
+    width: 320px;
+    display: inline-block;
+    padding-bottom: 50px;
+  }
+  .projectBox {
+    width: 45%;
+    display: block;
+    float: left;
+    padding: 5px;
+  }
+}
+
 // @media only screen and (max-width: 800px) {
 //   .proejctsBoxesContainer {
 //     width: 90%;

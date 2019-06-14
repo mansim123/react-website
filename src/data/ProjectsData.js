@@ -10,7 +10,7 @@ const projectData = [
   {
     id: 2,
     image: "paperToss.jpg",
-    url: "https://www.lovematcher.co.uk",
+    url: "https://www.manuelyemoh.co.uk/examples/SkyPaperToss/Desktop/",
     title: "Code Guru",
     text:
       "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
@@ -18,7 +18,7 @@ const projectData = [
   {
     id: 3,
     image: "joseDotd.jpg",
-    url: "https://www.lovematcher.co.uk",
+    url: "https://www.manuelyemoh.co.uk/examples/Jose_DOTD",
     title: "Code Guru",
     text:
       "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
@@ -26,7 +26,7 @@ const projectData = [
   {
     id: 4,
     image: "nameOrigin.jpg",
-    url: "https://www.lovematcher.co.uk",
+    url: "http://www.manuelyemoh.co.uk/examples/Tullomore/",
     title: "Code Guru",
     text:
       "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
@@ -34,7 +34,7 @@ const projectData = [
   {
     id: 5,
     image: "autodesk.jpg",
-    url: "https://www.lovematcher.co.uk",
+    url: "http://www.manuelyemoh.co.uk/examples/Autodesk/",
     title: "Code Guru",
     text:
       "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
@@ -42,7 +42,7 @@ const projectData = [
   {
     id: 6,
     image: "trainline.jpg",
-    url: "https://www.lovematcher.co.uk",
+    url: "http://optimuspreviewer.website/optimus/?project=trainline_3",
     title: "Code Guru",
     text:
       "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
