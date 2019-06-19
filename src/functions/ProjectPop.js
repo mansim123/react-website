@@ -7,14 +7,16 @@ class ProjectPop extends React.Component {
     this.state = {
       loading: true,
       image: props.image,
+      reference: props.reference,
       url: props.url,
-      title: props.title,
+      tags: props.tags,
       text: props.text
     };
     //this.loadImage(this.state.image);
 
     //reference to the DOM node
     this.productImage = null;
+    this.projectsItem = null;
     //reference to the animation
     this.myTween = null;
 
@@ -23,14 +25,14 @@ class ProjectPop extends React.Component {
   }
 
   animateScaleOver() {
-    this.myTween = TweenMax.to(this.productImage, 0.25, {
+    this.myTween = TweenMax.to(this.state.reference, 0.25, {
       scale: "1.05",
       ease: "Sine.easeInOut"
     });
   }
 
   animateScaleOut() {
-    this.myTween = TweenMax.to(this.productImage, 0.25, {
+    this.myTween = TweenMax.to(this.state.reference, 0.25, {
       scale: "1.00",
       ease: "Sine.easeInOut"
     });
@@ -38,35 +40,60 @@ class ProjectPop extends React.Component {
 
   importAll(r) {
     let images = {};
-    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    r.keys().map((item, index) => {
+      images[item.replace("./", "")] = r(item);
+    });
     return images;
-}
+  }
+
+  animateNavOut() {
+    TweenMax.to(this.projectsItem, 1, {
+      scale: "0",
+      ease: "Sine.easeInOut",
+      delay: "1",
+      onComplete: this.animateNavIn
+    });
+  }
+  animateNavIn(tagArray) {
+    // TweenMax.to(this.projectsItem, 1, {
+    //   scale: "0",
+    //   ease: "Sine.easeInOut",
+    //   delay: "1"
+    // });
+    console.log(tagArray);
+    console.log(this.state.tagArray);
+  }
+
+  componentWillMount() {
+
+   
+  }
 
   render() {
-
     const imgWidth = {
       width: "95%"
     };
 
-    const images = this.importAll(require.context('../img/thumb', false, /\.(png|jpe?g|svg)$/));
+    const images = this.importAll(
+      require.context("../img/thumb", false, /\.(png|jpe?g|svg)$/)
+    );
 
-    // if(this.state.loading) {
-    //   return null
-    // }
+    // setTimeout(() => {
+    //   this.animateNavIn(this.state.tagArray);
+    // }, 1000);
+
     return (
-      <div className="projectBox">
+      <div className="projectBox react">
         <div
           className="projectsItem"
           onMouseEnter={() => this.animateScaleOver()}
           onMouseLeave={() => this.animateScaleOut()}
+          ref={div2 => (this.projectsItem = div2)}
         >
-          <a
-            href={this.state.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href={this.state.url} target="_blank" rel="noopener noreferrer">
             <img
-              ref={div => (this.productImage = div)}
+              ref={div => (this.state.reference = div)}
+              className={this.state.tags}
               style={imgWidth}
               src={images[this.state.image]}
               alt="product"
@@ -74,6 +101,7 @@ class ProjectPop extends React.Component {
           </a>
         </div>
       </div>
+     
     );
   }
 }

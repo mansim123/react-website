@@ -41,7 +41,7 @@ class IntroSection extends React.Component {
         <div className="introBackground">
           <div className="introMainSection">
             <div className="avatar" />
-            <h1>ReactJs front end developer</h1>
+            <h1>Front end developer & Project Manager</h1>
             <a
               rel="noopener noreferrer"
               href="http://www.manuelyemoh.co.uk/ManuelYemohCV_2019_dev_.pdf"

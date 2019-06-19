@@ -5,14 +5,20 @@ import ProjectPop from "../functions/ProjectPop.js"
 
 export class Projects extends Component {
 
+  updateThumbs(e) {
+    e.preventDefault();
+    
+  } 
+
   render() {
 
     const projectComponents = ProjectData.map(project => (
       <ProjectPop
         key={project.id}
         image={project.image}
+        reference={project.reference}
         url={project.url}
-        title={project.title}
+        tags={project.tags}
         text={project.text}
       />
     ));
@@ -31,10 +37,10 @@ export class Projects extends Component {
             <div className="projectsBoxesContainer">
               <div className="projectsnav">
                 <a className="active" href="#">React</a>
-                <a href="#">HTML5 Banners</a>
-                <a href="#">Landing Pages</a>
-                <a href="#">Games</a>
-                <a href="#">All</a>
+                <a className="" href="#">HTML5 Banners</a>
+                <a className="" href="#">Landing Pages</a>
+                <a className="" href="#">Games</a>
+                <a className="" href="#" onClick={this.updateThumbs}>All</a>
               </div>
               {projectComponents}
             </div>
