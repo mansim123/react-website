@@ -7,7 +7,7 @@ export class Projects extends Component {
 
   updateThumbs(e) {
     e.preventDefault();
-    
+    document.getElementsByClassName("react").style.display = "none"
   } 
 
   render() {
