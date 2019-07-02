@@ -38,7 +38,7 @@ class App extends Component {
 	      <IntroDiv></IntroDiv>
 	      <AboutDiv></AboutDiv>
 	      <ServiceDiv></ServiceDiv>
-				<ProjectDiv></ProjectDiv>
+		  <ProjectDiv></ProjectDiv>
 	      <SkillsDiv></SkillsDiv>
 	      <ContactDiv></ContactDiv>
 	      <FooterDiv></FooterDiv>
@@ -48,7 +48,7 @@ class App extends Component {
 }
 
 function demoAsyncCall() {
-  return new Promise((resolve) => setTimeout(() => resolve(), 250));
+  return new Promise((resolve) => setTimeout(() => resolve(), 2500));
 }
 
 

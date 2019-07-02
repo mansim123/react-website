@@ -1,8 +1,8 @@
 const skillsData = [
     {
         id: 1,
-        title: "React",
-        percent: "80",
+        title: "HTML5",
+        percent: "90",
         colorOne:'#d35400',
         colorTwo: '#e45b00'
     },
@@ -29,14 +29,14 @@ const skillsData = [
     },
     {
         id: 5,
-        title: "HTML5",
+        title: "HTML Emails",
         percent: "95",
         colorOne:'#06ca2b',
         colorTwo: '#06de2f'
     },
     {
         id: 6,
-        title: "Redux",
+        title: "React",
         percent: "60",
         colorOne:'#09cd98',
         colorTwo: '#0ae0a6'
@@ -57,7 +57,7 @@ const skillsData = [
     },
     {
         id: 9,
-        title: "RESTful APIs",
+        title: "Pm",
         percent: "80",
         colorOne:'#390dc7',
         colorTwo: '#3e0ed8'

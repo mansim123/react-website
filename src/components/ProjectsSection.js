@@ -35,13 +35,6 @@ export class Projects extends Component {
 
           <div className="projectsBoxesSection">
             <div className="projectsBoxesContainer">
-              <div className="projectsnav">
-                <a className="active" href="#">React</a>
-                <a className="" href="#">HTML5 Banners</a>
-                <a className="" href="#">Landing Pages</a>
-                <a className="" href="#">Games</a>
-                <a className="" href="#" onClick={this.updateThumbs}>All</a>
-              </div>
               {projectComponents}
             </div>
           </div>

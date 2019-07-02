@@ -5,8 +5,7 @@ const projectData = [
     reference: "lovematch",
     url: "https://www.lovematcher.co.uk",
     tags: "react",
-    text:
-      "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
+    text: ""
   },
   {
     id: 2,
@@ -14,8 +13,7 @@ const projectData = [
     reference: "papertoss",
     url: "https://www.manuelyemoh.co.uk/examples/SkyPaperToss/Desktop/",
     tags: "Code Guru",
-    text:
-      "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
+    text: ""
   },
   {
     id: 3,
@@ -23,8 +21,7 @@ const projectData = [
     reference: "jose",
     url: "https://www.manuelyemoh.co.uk/examples/Jose_DOTD",
     tags: "Code Guru",
-    text:
-      "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
+    text: ""
   },
   {
     id: 4,
@@ -32,8 +29,7 @@ const projectData = [
     reference: "nameorigin",
     url: "http://www.manuelyemoh.co.uk/examples/Tullomore/",
     tags: "Code Guru",
-    text:
-      "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
+    text: ""
   },
   {
     id: 5,
@@ -41,8 +37,7 @@ const projectData = [
     reference: "autodesk",
     url: "http://www.manuelyemoh.co.uk/examples/Autodesk/",
     tags: "Code Guru",
-    text:
-      "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
+    text: ""
   },
   {
     id: 6,
@@ -50,8 +45,31 @@ const projectData = [
     reference: "trainline",
     url: "http://optimuspreviewer.website/optimus/?project=trainline_3",
     tags: "Code Guru",
-    text:
-      "Strong proficiency in JavaScript, including DOM manipulation and the JavaScript object model."
+    text: ""
+  },
+  {
+    id: 7,
+    image: "kiehls.jpg",
+    reference: "kiehls",
+    url: "https://www.manuelyemoh.co.uk/examples/Keihls/",
+    tags: "Code Guru",
+    text: ""
+  },
+  {
+    id: 8,
+    image: "urbanDecay.jpg",
+    reference: "urbanDecay",
+    url: "https://www.manuelyemoh.co.uk/examples/Urbandecay/",
+    tags: "Code Guru",
+    text: ""
+  },
+  {
+    id: 9,
+    image: "vichy.jpg",
+    reference: "vichy",
+    url: "https://www.manuelyemoh.co.uk/examples/MineralBlend/",
+    tags: "Code Guru",
+    text: ""
   }
 ];
 
