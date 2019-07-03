@@ -24,7 +24,9 @@ class IntroSection extends React.Component {
 	}
 
 	componentDidMount() {
-		this.myTween = TweenMax.to(this.reactRibbon, 0.75, {top:"10px",ease:"Sine.easeInOut"});
+    this.myTween = TweenMax.to(this.reactRibbon, 0.75, {top:"10px",ease:"Sine.easeInOut"});
+    this.myTween = TweenMax.to(this.avatar, 0, {scale:"0"});
+    this.myTween = TweenMax.to(this.avatar, 1, { scale: "1" });
 	}
 
 	handleScroll = () => window.scroll({top: 760, left: 0, behavior: 'smooth'});
@@ -40,7 +42,7 @@ class IntroSection extends React.Component {
       <div style={iStyle}>
         <div className="introBackground">
           <div className="introMainSection">
-            <div className="avatar" />
+            <div className="avatar" ref={ava => (this.avatar = ava)}/>
             <h1>Front end developer & Project Manager</h1>
             <a
               rel="noopener noreferrer"
