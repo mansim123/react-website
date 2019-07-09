@@ -7,6 +7,7 @@ import SkillsDiv from './SkillsSection';
 import ContactDiv from './ContactSection';
 import FooterDiv from './FooterSection';
 import ProjectDiv from './ProjectsSection'
+import SideNav from './SideNav'
 
 class App extends Component {
 

@@ -1,18 +1,35 @@
 .introBackground {
+  // background-image: url("../img/introBg.jpg");
+  // width: 100%;
+  // background-size: cover;
+  // background-repeat: no-repeat;
+}
+
+.parallaxIntro {
+  /* The image used */
   background-image: url("../img/introBg.jpg");
-  width: 100%;
-  background-size: cover;
+
+  /* Set a specific height */
+  min-height: 750px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: top;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .introMainSection {
   font-family: "Sanchez", sans-serif;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 100px 0;
-  text-align: center;
-  width: 700px;
-  color: #ffffff;
+    padding: 100px 0;
+    text-align: center;
+    width: 700px;
+    color: #ffffff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
   h1 {
     font-size: 50px;
     font-weight: 500;
