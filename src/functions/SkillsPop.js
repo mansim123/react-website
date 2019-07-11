@@ -24,13 +24,9 @@ class SkillsPop extends React.Component {
 		window.addEventListener('scroll', this.handleScroll);
 	}
 
-	componentWillUnmount() {
-		window.removeEventListener('scroll', this.handleScroll);
-	}
-
 	handleScroll (event) {
 
-	     if(window.scrollY >= 1500){
+	     if(window.scrollY >= 2000){
 	     	this.myTween = TweenMax.to(this.percentBars, 2, {width:this.state.percent+'%',ease:"Sine.easeInOut"});
 	     	window.removeEventListener('scroll', this.handleScroll);
 	     }
