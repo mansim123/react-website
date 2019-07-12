@@ -23,7 +23,7 @@ const skillsData = [
     {
         id: 4,
         title: "Javascript",
-        percent: "90",
+        percent: "80",
         colorOne:'#7fd503',
         colorTwo: '#88e404'
     },
