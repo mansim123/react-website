@@ -21,6 +21,11 @@ class Services extends React.Component {
   constructor() {
     super();
 
+    this.state = {
+      cards: [],
+      scrollPos:0
+    }
+
     // cards, elements tha will be used in the tween
     this.cards = [];
 
@@ -30,29 +35,38 @@ class Services extends React.Component {
     // reference to the animation
     this.myTween = null;
 
-    //this.handleScroll = this.handleScroll.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
-    let scrollSection = ReactDOM.findDOMNode(this.refs['UniqueElementIdentifier'])
- .getBoundingClientRect().top
- 
-    window.addEventListener("scroll", function(){
 
-      if (window.scrollY >= scrollSection) {
-        this.tl.staggerTo(this.cards, 1, { autoAlpha: 1, y: 0 }, 0.2);
-        this.myTween = TweenMax.to(this.serviceHeader, 0.5, {
-          delay: 0,
-          y: "0",
-          alpha: "1",
-          ease: "Sine.easeOut"
-        });
-        window.removeEventListener("scroll", this.handleScroll);
-      }
+    let scrollSection = ReactDOM.findDOMNode(
+      this.refs["serviceHeight"]
+    ).getBoundingClientRect().top;
 
+    this.setState({
+      scrollPos: scrollSection
     });
+ 
+    window.addEventListener("scroll", this.handleScroll)
+
     this.myTween = TweenMax.to(this.serviceHeader, 0, { y: "-15", alpha: "0" });
     this.tl.staggerTo(this.cards, 0, { autoAlpha: 0, y: 30 }, 0.2);
+  }
+
+  handleScroll(event){
+
+    if (window.scrollY >= this.state.scrollPos - 300) {
+
+      this.tl.staggerTo(this.cards, 1, { autoAlpha: 1, y: 0 }, 0.2);
+      this.myTween = TweenMax.to(this.serviceHeader, 0.5, {
+        delay: 0,
+        y: "0",
+        alpha: "1",
+        ease: "Sine.easeOut"
+      });
+      window.removeEventListener("scroll", this.handleScroll);
+    }
   }
 
   render() {
@@ -75,7 +89,7 @@ class Services extends React.Component {
     ));
 
     return (
-      <div ref="UniqueElementIdentifier" className="servicesBackground">
+      <div ref="serviceHeight" className="servicesBackground">
         <div className="servicesSection">
           <header ref={serviceH => (this.serviceHeader = serviceH)}>
             <h1>What I can do</h1>

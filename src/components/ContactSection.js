@@ -1,6 +1,8 @@
 import React from 'react'
+import ReactDOM from "react-dom";
 import '../css/Contact.scss'
 import * as emailjs from 'emailjs-com';
+import { TweenMax } from "gsap/TweenMax";
 
 const redBorder = {
 	border:"2px solid red"
@@ -11,233 +13,263 @@ const normalBorder = {
 }
 
 class Contact extends React.Component {
+  constructor() {
+    super();
 
-	constructor() {
-        super()
+    this.state = {
+      firstName: "",
+      email: "",
+      subject: "",
+      message: "",
+      outline: "normalBorder",
+      emailError: "",
+      emailSuccess: "",
+      errors: {
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+        outlineName: normalBorder,
+        outlineEmail: normalBorder,
+        outlineSubject: normalBorder,
+        outlineMessage: normalBorder
+      },
+      scrollPos: 0
+    };
+    // reference to the animation
+    this.myTween = null;
 
-        this.state = {
-            firstName: "",
-            email: "",
-            subject: "",
-            message:"",
-            outline:"normalBorder",
-            emailError:"",
-            emailSuccess:"",
-            errors: {
-            	name:'',
-            	email:'',
-            	subject:'',
-            	message:'',
-            	outlineName:normalBorder,
-            	outlineEmail:normalBorder,
-            	outlineSubject:normalBorder,
-            	outlineMessage:normalBorder,
-            }
-        }
-        this.handleChange = this.handleChange.bind(this)
-        this.handleFormSubmit = this.handleFormSubmit.bind(this)
+    this.handleScroll = this.handleScroll.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    let scrollSection = ReactDOM.findDOMNode(
+      this.refs["contactHeight"]
+    ).getBoundingClientRect().top;
+
+    this.setState({
+      scrollPos: scrollSection
+    });
+
+    window.addEventListener("scroll", this.handleScroll);
+
+    this.myTween = TweenMax.to(this.contactHeader, 0, { y: "-15", alpha: "0" });
+    this.myTween = TweenMax.to(this.contactSection, 0, { y: "-15", alpha: "0" });
+  }
+
+  handleScroll(event) {
+    if (window.scrollY >= this.state.scrollPos + 500) {
+      this.myTween = TweenMax.to(this.contactHeader, 0.5, {
+        delay: 0,
+        y: "0",
+        alpha: "1",
+        ease: "Sine.easeOut"
+      });
+      this.myTween = TweenMax.to(this.contactSection, 1, {
+        delay: 0.25,
+        y: "0",
+        alpha: "1",
+        ease: "Sine.easeOut"
+      });
+      window.removeEventListener("scroll", this.handleScroll);
+    }
+  }
+
+  handleChange(event) {
+    event.preventDefault();
+    const { name, value, type, checked } = event.target;
+
+    this.setState({
+      [name]: value
+    });
+  }
+
+  validateEmail(email) {
+    const expression = /(?!.*\.{2})^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
+
+    return expression.test(String(email).toLowerCase());
+  }
+
+  validateMail() {
+    let formIsValid = true;
+    let errors = {};
+
+    if (!this.state.firstName || this.state.firstName.length < 3) {
+      errors.name = "* First name is minimum 3 characters long";
+      errors.outlineName = redBorder;
+      formIsValid = false;
+    } else {
+      errors.name = "";
+      errors.outlineName = normalBorder;
     }
 
-    handleChange(event) {
-    	event.preventDefault();
-        const {name, value, type, checked} = event.target
-
-        this.setState({
-            [name]: value
-        }) 
+    if (this.validateEmail(this.state.email) === false) {
+      errors.email = "* This is not a valid email";
+      errors.outlineEmail = redBorder;
+      formIsValid = false;
+    } else {
+      errors.email = "";
+      errors.outlineEmail = normalBorder;
     }
 
-    validateEmail(email) {
-
-	    const expression = /(?!.*\.{2})^([a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+(\.[a-z\d!#$%&'*+\-\/=?^_`{|}~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]+)*|"((([ \t]*\r\n)?[ \t]+)?([\x01-\x08\x0b\x0c\x0e-\x1f\x7f\x21\x23-\x5b\x5d-\x7e\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|\\[\x01-\x09\x0b\x0c\x0d-\x7f\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))*(([ \t]*\r\n)?[ \t]+)?")@(([a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\d\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.)+([a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]|[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF][a-z\d\-._~\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]*[a-z\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])\.?$/i;
-
-	    return expression.test(String(email).toLowerCase())
-	}
-
-    validateMail () {
-    	let formIsValid = true
-    	let errors = {}
-
-    	if(!this.state.firstName || this.state.firstName.length < 3){
-    		errors.name = "* First name is minimum 3 characters long"
-    		errors.outlineName = redBorder
-    		formIsValid = false
-    	}
-    	else {
-    		errors.name = ""
-    		errors.outlineName = normalBorder
-    	}
-
-    	if(this.validateEmail(this.state.email) === false){
-    		errors.email = "* This is not a valid email"
-    		errors.outlineEmail = redBorder
-    		formIsValid = false
-    	}else{
-    		errors.email = ""
-    		errors.outlineEmail = normalBorder
-    	}
-
-    	if(!this.state.subject || this.state.subject.length < 3){
-    		errors.subject = "* Subject is minimum 3 characters long"
-    		errors.outlineSubject = redBorder
-    		formIsValid = false
-    	}
-    	else {
-    		errors.subject = ""
-    		errors.outlinesubject = normalBorder
-    	}
-
-    	if(!this.state.message || this.state.message.length < 10){
-    		errors.outlineMessage = redBorder
-    		errors.message = "* Message is minimum 10 characters long"
-    		formIsValid = false
-    	}
-    	else {
-    		errors.message = ""
-    		errors.outlineMessage = normalBorder
-    	}
-
-		this.setState({
-			emailError:"",
-            emailSuccess:"",
-			errors: errors
-		})
-
-		return formIsValid
+    if (!this.state.subject || this.state.subject.length < 3) {
+      errors.subject = "* Subject is minimum 3 characters long";
+      errors.outlineSubject = redBorder;
+      formIsValid = false;
+    } else {
+      errors.subject = "";
+      errors.outlinesubject = normalBorder;
     }
 
-    handleFormSubmit (event) {
-      
-	  event.preventDefault();
+    if (!this.state.message || this.state.message.length < 10) {
+      errors.outlineMessage = redBorder;
+      errors.message = "* Message is minimum 10 characters long";
+      formIsValid = false;
+    } else {
+      errors.message = "";
+      errors.outlineMessage = normalBorder;
+    }
 
-	  if (!this.validateMail()){
-	  	return
-	  }
+    this.setState({
+      emailError: "",
+      emailSuccess: "",
+      errors: errors
+    });
 
-      const responseMessage = this;
+    return formIsValid;
+  }
 
-	  const service_id = "default_service";
-  	  const template_id = "gmail";
-  	  const user_id = "user_3i82VnlQSimK07gA3RFgh"
+  handleFormSubmit(event) {
+    event.preventDefault();
 
-  	  var templateParms = {
-  	  	firstName: this.state.firstName,
-	  	email: this.state.email,
-	  	subject: this.state.subject,
-	  	message: this.state.value
-  	  }
+    if (!this.validateMail()) {
+      return;
+    }
 
-	  emailjs.send(service_id,template_id,templateParms,user_id)
-	    .then((response) => {
-	       console.log('SUCCESS!', response.status, response.text);
-	       responseMessage.setState({
-		       firstName: "",
-		       email: "",
-		       subject: "",
-		       message:"",
-	       	   emailSuccess:"The message was sent, I will get back to you ASAP"
-	       })
-	    }, (err) => {
-	       console.log('FAILED...', err);
-	       responseMessage.setState({
-		      firstName: "",
-		      email: "",
-		      subject: "",
-		      message:"",
-       		  emailError:"Error! message was not sent, please try again later"
-	       })
-	  });
-	};
-	
-	render () {
+    const responseMessage = this;
 
-		let errorsStyle = {
-			color:'red',
-			fontWeight:'bold',
-			textShadow: '#000 1px 1px 1px'
-		}
+    const service_id = "default_service";
+    const template_id = "gmail";
+    const user_id = "user_3i82VnlQSimK07gA3RFgh";
 
-		let SucessStyle = {
-			color:'white',
-			fontWeight:'bold',
-			textShadow: '#000 1px 1px 1px'
-		}
+    var templateParms = {
+      firstName: this.state.firstName,
+      email: this.state.email,
+      subject: this.state.subject,
+      message: this.state.value
+    };
 
-		return(
-			<div className="contactBackground">
-				<div className="contactSection">
-						<header>
-							<h1>Contact</h1>
-							<h2>Contact me to discuss projects</h2>
-						</header>
-				</div>
-				<div className="contactSectionContainer">
-						<form>
+    emailjs.send(service_id, template_id, templateParms, user_id).then(
+      response => {
+        console.log("SUCCESS!", response.status, response.text);
+        responseMessage.setState({
+          firstName: "",
+          email: "",
+          subject: "",
+          message: "",
+          emailSuccess: "The message was sent, I will get back to you ASAP"
+        });
+      },
+      err => {
+        console.log("FAILED...", err);
+        responseMessage.setState({
+          firstName: "",
+          email: "",
+          subject: "",
+          message: "",
+          emailError: "Error! message was not sent, please try again later"
+        });
+      }
+    );
+  }
 
-						<div className="contactInputs">
-							<input 
-				                name="firstName" 
-				                value={this.state.firstName} 
-				                onChange={this.handleChange} 
-				                placeholder="First Name"
-				                style={this.state.errors.outlineName}
-				            />
-			            </div>
-			            <div className="contactInputs">
-				            <input 
-				                name="email" 
-				                value={this.state.email}
-				                onChange={this.handleChange} 
-				                placeholder="Email"
-				                style={this.state.errors.outlineEmail}
-				            />
-			            </div>
-			            <div className="contactInputs">
-				            <input 
-				                name="subject" 
-				                value={this.state.subject}
-				                onChange={this.handleChange} 
-				                placeholder="Subject" 
-				                style={this.state.errors.outlineSubject}
-				            />
-			            </div>
-			            <div className="contactTextArea">
-				            <textarea 
-				            	name="message"
-			                    value={this.state.message}
-			                    onChange={this.handleChange}
-			                    placeholder="Main message" 
-			                    style={this.state.errors.outlineMessage}
-			                    cols="40"
-			                    rows="10"
-			                />
-		                </div>
-		                <div className="errorSection">
-			                <p style={errorsStyle}>{this.state.errors.name}</p>
-			                <p style={errorsStyle}>{this.state.errors.email}</p>
-			                <p style={errorsStyle}>{this.state.errors.subject}</p>
-			                <p style={errorsStyle}>{this.state.errors.message}</p>
-			                <p style={errorsStyle}>{this.state.emailError}</p>
-			                <p style={SucessStyle}>{this.state.emailSuccess}</p>
-		                </div>
-		                <div className="contactSubmit">
-		                	<button 
-		                		onClick={this.handleFormSubmit.bind(this)}
-		                	>Submit</button>
-		                </div>
-		                <div>
-						  {this.state.mailSent &&
-						    <div>Thank you for contcting us.</div>
-						  }
-						</div>
-				       </form>
-		        </div>
-			</div>
-			
-		)
+  render() {
+    let errorsStyle = {
+      color: "red",
+      fontWeight: "bold",
+      textShadow: "#000 1px 1px 1px"
+    };
 
-	}
+    let SucessStyle = {
+      color: "white",
+      fontWeight: "bold",
+      textShadow: "#000 1px 1px 1px"
+    };
 
+    return (
+      <div ref="contactHeight" className="contactBackground">
+        <div ref={contactH => (this.contactHeader = contactH)} className="contactSection">
+          <header>
+            <h1>Contact</h1>
+            <h2>Contact me to discuss projects</h2>
+          </header>
+        </div>
+        <div ref={contactH => (this.contactSection = contactH)} className="contactSectionContainer">
+          <form>
+            <div className="contactInputs">
+              <input
+                name="firstName"
+                value={this.state.firstName}
+                onChange={this.handleChange}
+                placeholder="First Name"
+                style={this.state.errors.outlineName}
+              />
+            </div>
+            <div className="contactInputs">
+              <input
+                name="email"
+                value={this.state.email}
+                onChange={this.handleChange}
+                placeholder="Email"
+                style={this.state.errors.outlineEmail}
+              />
+            </div>
+            <div className="contactInputs">
+              <input
+                name="subject"
+                value={this.state.subject}
+                onChange={this.handleChange}
+                placeholder="Subject"
+                style={this.state.errors.outlineSubject}
+              />
+            </div>
+            <div className="contactTextArea">
+              <textarea
+                name="message"
+                value={this.state.message}
+                onChange={this.handleChange}
+                placeholder="Main message"
+                style={this.state.errors.outlineMessage}
+                cols="40"
+                rows="10"
+              />
+            </div>
+            <div className="errorSection">
+              <p style={errorsStyle}>{this.state.errors.name}</p>
+              <p style={errorsStyle}>{this.state.errors.email}</p>
+              <p style={errorsStyle}>{this.state.errors.subject}</p>
+              <p style={errorsStyle}>{this.state.errors.message}</p>
+              <p style={errorsStyle}>{this.state.emailError}</p>
+              <p style={SucessStyle}>{this.state.emailSuccess}</p>
+            </div>
+            <div className="contactSubmit">
+              <button onClick={this.handleFormSubmit.bind(this)}>
+                Submit
+              </button>
+            </div>
+            <div>
+              {this.state.mailSent && (
+                <div>Thank you for contcting us.</div>
+              )}
+            </div>
+          </form>
+        </div>
+        <div className="parallaxContact" />
+      </div>
+    );
+  }
 }
 
 export default Contact

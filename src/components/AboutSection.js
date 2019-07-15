@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom"
 import "../css/About.scss";
 import profilePicture from "../img/profilePic.jpg";
 import { TweenMax } from "gsap/TweenMax";
@@ -6,48 +7,58 @@ import { TweenMax } from "gsap/TweenMax";
 class About extends React.Component {
   constructor() {
     super();
-    // reference to the animation
-	  this.myTween = null;
 
-	this.handleScroll = this.handleScroll.bind(this);
+    this.state = {
+      scrollPos: 0
+    };
+    // reference to the animation
+    this.myTween = null;
+
+    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
+
+    let scrollSection = ReactDOM.findDOMNode(this.refs["aboutHeight"]).getBoundingClientRect().top;
+
+    this.setState({
+      scrollPos: scrollSection
+    });
+
     window.addEventListener("scroll", this.handleScroll);
 
     this.myTween = TweenMax.to(this.aboutHeader, 0, { y: "-15", alpha: "0" });
     this.myTween = TweenMax.to(this.aboutImage, 0, { x: "-50", alpha: "0" });
     this.myTween = TweenMax.to(this.aboutText, 0, { x: "50", alpha: "0" });
-
   }
 
   handleScroll(event) {
-    if (window.scrollY >= 350) {
-		this.myTween = TweenMax.to(this.aboutHeader, 0.5, {
-      delay:0,
-      y: "0",
-      alpha: "1",
-      ease: "Sine.easeOut"
-    });
-    this.myTween = TweenMax.to(this.aboutImage, 1, {
-      delay: 0.25,
-      x: "0",
-      alpha: "1",
-      ease: "Sine.easeOut"
-    });
-    this.myTween = TweenMax.to(this.aboutText, 1, {
-      delay: 0.25,
-      x: "0",
-      alpha: "1",
-      ease: "Sine.easeOut"
-    });
+    if (window.scrollY >= this.state.scrollPos - 350) {
+      this.myTween = TweenMax.to(this.aboutHeader, 0.5, {
+        delay: 0,
+        y: "0",
+        alpha: "1",
+        ease: "Sine.easeOut"
+      });
+      this.myTween = TweenMax.to(this.aboutImage, 1, {
+        delay: 0.25,
+        x: "0",
+        alpha: "1",
+        ease: "Sine.easeOut"
+      });
+      this.myTween = TweenMax.to(this.aboutText, 1, {
+        delay: 0.25,
+        x: "0",
+        alpha: "1",
+        ease: "Sine.easeOut"
+      });
       window.removeEventListener("scroll", this.handleScroll);
     }
   }
 
   render() {
     return (
-      <div className="aboutBackground">
+      <div ref="aboutHeight" className="aboutBackground">
         <div
           ref={aboutH => (this.aboutHeader = aboutH)}
           className="aboutSection"
@@ -65,15 +76,18 @@ class About extends React.Component {
                 src={profilePicture}
               />
             </div>
-            <div ref={aboutT => (this.aboutText = aboutT)} className="col_2">
+            <div
+              ref={aboutT => (this.aboutText = aboutT)}
+              className="col_2"
+            >
               <h3>Manuel Yemoh</h3>
               <p>
-                BSc in Computer Game Design, with over 9 years of professional
-                digital development experience and 4 years running a successful
-                production studio. Working with some of the biggest agencies in
-                London, specialising in HTML5 digital development, project
-                management and consultation. Available for on-site or remote
-                work.
+                BSc in Computer Game Design, with over 9 years of
+                professional digital development experience and 4 years
+                running a successful production studio. Working with some of
+                the biggest agencies in London, specialising in HTML5
+                digital development, project management and consultation.
+                Available for on-site or remote work.
               </p>
             </div>
           </div>

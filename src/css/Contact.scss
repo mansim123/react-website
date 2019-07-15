@@ -1,9 +1,24 @@
 .contactBackground {
-  background-image: url("../img/contactBg.jpg");
-  width: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
+  // background-image: url("../img/contactBg.jpg");
+  // width: 100%;
+  // background-size: cover;
+  // background-repeat: no-repeat;
 }
+
+.parallaxContact {
+  /* The image used */
+  background-image: url("../img/contactBg.jpg");
+
+  /* Set a specific height */
+  min-height: 750px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 
 .contactSection {
   font-family: "Sanchez", sans-serif;
@@ -11,7 +26,12 @@
   text-align: center;
   width: 770px;
   color: #000000;
-  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  
   h1 {
     color: #fff;
     font-size: 40px;
@@ -35,8 +55,13 @@
 .contactSectionContainer {
   text-align: center;
   width: 770px;
+  padding-top: 180px;
   color: #000000;
-  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
   form {
     display: inline-block;
     padding-bottom: 50px;
